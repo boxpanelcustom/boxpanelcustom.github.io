@@ -4,11 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- ================= MASTER SEO METADATA ================= -->
-    <!-- Title sangat spesifik untuk mendominasi pencarian lokal & nasional -->
     <title>Pabrik Box Panel Listrik & Fabrikasi Mesin Industri | Semarang</title>
-    
-    <!-- Deskripsi padat keyword -->
     <meta name="description" content="Pabrik pembuatan Box Panel Listrik (Wall Mounting & Free Standing) di Semarang. Melayani fabrikasi plat besi, storage tank, precision part, dan mesin industri (conveyor, robotic, dll).">
     <meta name="keywords" content="pabrik box panel semarang, jual box panel listrik, ukuran box panel wall mounting, free standing panel, fabrikasi plat besi, pembuat storage tank semarang, mesin industri custom, conveyor, mesin filling, industrial robotic">
     <meta name="robots" content="index, follow, max-image-preview:large">
@@ -16,27 +12,23 @@
     <meta name="geo.region" content="ID-JT">
     <meta name="geo.placename" content="Semarang">
 
-    <!-- Open Graph (Tampilan saat link di-share ke WA/Sosmed) -->
     <meta property="og:title" content="Pusat Pembuatan Box Panel & Mesin Industri Custom - Semarang">
     <meta property="og:description" content="Pabrik langsung. Melayani pembuatan panel listrik segala ukuran dan fabrikasi metalworks presisi tingkat tinggi untuk kebutuhan industri.">
     <meta property="og:type" content="website">
 
-    <!-- Font Modern (Prospera Vibe) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
 
-    <!-- ================= CSS / TAMPILAN VISUAL ================= -->
     <style>
         :root {
-            /* Warna khas Prospera (Deep Dark Blue & Cyan Accent) */
-            --bg-base: #030811;
-            --bg-card: #0a1120;
-            --text-main: #f8fafc;
-            --text-dim: #94a3b8;
-            --accent-glow: #00f0ff;
-            --accent-blue: #0070f3;
-            --border-subtle: rgba(255, 255, 255, 0.08);
+            var(--bg-base): #030811;
+            var(--bg-card): #0a1120;
+            var(--text-main): #f8fafc;
+            var(--text-dim): #94a3b8;
+            var(--accent-glow): #00f0ff;
+            var(--accent-blue): #0070f3;
+            var(--border-subtle): rgba(255, 255, 255, 0.08);
         }
         
         * { box-sizing: border-box; }
@@ -44,44 +36,40 @@
         body {
             margin: 0;
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: var(--bg-base);
-            color: var(--text-main);
+            background-color: #030811;
+            color: #f8fafc;
             line-height: 1.7;
             overflow-x: hidden;
         }
 
         .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
         
-        /* Navbar */
         nav {
             padding: 24px 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid var(--border-subtle);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
         .logo { font-size: 1.75rem; font-weight: 800; letter-spacing: -0.5px; }
-        .logo span { color: var(--accent-glow); }
+        .logo span { color: #00f0ff; }
 
-        /* Typography & Gradients */
         .gradient-text {
-            background: linear-gradient(90deg, var(--accent-glow), var(--accent-blue));
+            background: linear-gradient(90deg, #00f0ff, #0070f3);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
         h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.1; margin: 0 0 20px; font-weight: 800; }
         h2 { font-size: clamp(2rem, 3vw, 2.5rem); margin-bottom: 40px; text-align: center; font-weight: 800; }
-        h3 { font-size: 1.25rem; color: var(--accent-glow); margin: 0 0 10px; }
+        h3 { font-size: 1.25rem; color: #00f0ff; margin: 0 0 10px; }
 
-        /* Sections */
-        section { padding: 100px 0; border-bottom: 1px solid var(--border-subtle); }
+        section { padding: 100px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
         .text-center { text-align: center; }
 
-        /* Hero */
         .hero { text-align: center; padding: 120px 0 60px; }
-        .hero p { font-size: 1.15rem; color: var(--text-dim); max-width: 700px; margin: 0 auto 40px; }
+        .hero p { font-size: 1.15rem; color: #94a3b8; max-width: 700px; margin: 0 auto 40px; }
         
-        /* Image Placeholders */
+        /* DIPERBAIKI: Opacity disetel ke 1 agar gambar terlihat */
         .img-placeholder {
             background: rgba(255, 255, 255, 0.03);
             border: 2px dashed rgba(255, 255, 255, 0.15);
@@ -89,7 +77,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--text-dim);
+            color: #94a3b8;
             font-weight: 600;
             overflow: hidden;
             position: relative;
@@ -100,17 +88,16 @@
             object-fit: cover;
             position: absolute;
             top: 0; left: 0;
-            opacity: 0; /* Ganti ke 1 jika foto sudah diisi */
+            opacity: 1; /* <-- MASALAH UTAMA DIPERBAIKI DI SINI */
         }
         .hero-img { height: 400px; max-width: 900px; margin: 0 auto; box-shadow: 0 20px 40px rgba(0, 240, 255, 0.05); }
 
-        /* Product Grid (Box Panel) */
         .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
         @media (max-width: 768px) { .grid-2 { grid-template-columns: 1fr; } }
         
         .card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-subtle);
+            background: #0a1120;
+            border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 16px;
             padding: 40px;
             transition: transform 0.3s ease;
@@ -125,24 +112,22 @@
             padding: 12px 16px;
             background: rgba(255,255,255,0.02);
             border-radius: 8px;
-            border-left: 3px solid var(--accent-blue);
+            border-left: 3px solid #0070f3;
             font-size: 0.95rem;
             color: #cbd5e1;
         }
-        ul.size-list li.custom { border-left-color: var(--accent-glow); font-weight: 600; color: #fff; }
+        ul.size-list li.custom { border-left-color: #00f0ff; font-weight: 600; color: #fff; }
 
-        /* Capabilities / Metalworks Grid */
         .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; }
         .feature-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-subtle);
+            background: #0a1120;
+            border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 16px;
             padding: 30px;
             text-align: left;
         }
         .feature-card .icon-img { height: 180px; width: 100%; margin-bottom: 20px; border-radius: 8px; }
 
-        /* Floating WA Button */
         .wa-float {
             position: fixed;
             bottom: 30px;
@@ -163,54 +148,8 @@
         }
         .wa-float:hover { transform: scale(1.05); }
 
-        /* Footer */
-        footer { padding: 40px 0; text-align: center; color: var(--text-dim); font-size: 0.9rem; }
+        footer { padding: 40px 0; text-align: center; color: #94a3b8; font-size: 0.9rem; }
     </style>
-
-    <!-- ================= ADVANCED SEO SCHEMA MARKUP ================= -->
-    <!-- Script ini menceritakan kepada Google persis apa bisnis Anda dan apa yang dijual -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ManufacturingBusiness",
-      "name": "Pusat Fabrikasi Panel Listrik & Metalworks",
-      "description": "Pabrik manufaktur spesialis Box Panel Listrik (Wall Mounting & Free Standing), fabrikasi plat besi, storage tank, dan mesin industri custom.",
-      "telephone": "+6281931362319",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Semarang",
-        "addressRegion": "Jawa Tengah",
-        "addressCountry": "ID"
-      },
-      "areaServed": {
-        "@type": "Country",
-        "name": "Indonesia"
-      },
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Katalog Produk & Jasa",
-        "itemListElement": [
-          {
-            "@type": "OfferCatalog",
-            "name": "Box Panel Listrik",
-            "itemListElement": [
-              {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Box Panel Wall Mounting 40x30x20 hingga 120x80x30"}},
-              {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Box Panel Free Standing 1, 2, dan 3 Pintu (Depth 60-80)"}}
-            ]
-          },
-          {
-            "@type": "OfferCatalog",
-            "name": "Fabrikasi Mesin & Metalworks",
-            "itemListElement": [
-              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Pembuatan Storage Tank"}},
-              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Mesin Industri Custom (Labelling, Conveyor, Liquid Filling)"}},
-              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Industrial Robotic System"}}
-            ]
-          }
-        ]
-      }
-    }
-    </script>
 </head>
 <body>
 
@@ -220,35 +159,28 @@
         </div>
     </nav>
 
-    <!-- HERO SECTION -->
     <section class="hero">
         <div class="container">
             <h1>Smart Manufacturing,<br><span class="gradient-text">Seamless Precision.</span></h1>
             <p>Pusat fabrikasi plat besi dan perakitan Box Panel Listrik di <strong>Semarang, Jawa Tengah</strong>. Menghadirkan solusi engineering presisi untuk kebutuhan infrastruktur kelistrikan dan mesin industri Anda.</p>
             
-            <!-- PLACEHOLDER FOTO HERO (Misal: Foto pabrik/workshop/produk utama) -->
             <div class="img-placeholder hero-img">
-                [ SPACE FOTO : FOTO WORKSHOP / PRODUK UNGGULAN ]
-                <a href="https://ibb.co/GQ1dxJ9P"><img src="https://i.ibb.co/d43fWctK/pabrik-fabrikasi-metalworks-plat-besi-stainless-custom-semarang.png" alt="pabrik-fabrikasi-metalworks-plat-besi-stainless-custom-semarang" border="0"></a>
+                <img src="https://i.ibb.co/d43fWctK/pabrik-fabrikasi-metalworks-plat-besi-stainless-custom-semarang.png" alt="Pabrik Fabrikasi Metalworks Semarang">
             </div>
         </div>
     </section>
 
-    <!-- PRODUK UTAMA: BOX PANEL -->
     <section id="box-panel">
         <div class="container">
             <h2>Spesifikasi <span class="gradient-text">Box Panel Listrik</span></h2>
             
             <div class="grid-2">
-                <!-- Wall Mounting -->
                 <div class="card">
-                    <!-- PLACEHOLDER FOTO WALL MOUNTING -->
                     <div class="img-placeholder" style="height: 250px; margin-bottom: 20px; border-radius: 8px;">
-                        [ SPACE FOTO : PANEL WALL MOUNTING ]
-                        <a href="https://ibb.co/SDgXMJR7"><img src="https://i.ibb.co/dsv0V7GJ/box-panel-listrik-wall-mounting-mounted-custom-semarang.png" alt="box-panel-listrik-wall-mounting-mounted-custom-semarang" border="0"></a>
+                        <img src="https://i.ibb.co/dsv0V7GJ/box-panel-listrik-wall-mounting-mounted-custom-semarang.png" alt="Box Panel Listrik Wall Mounting">
                     </div>
                     <h3>Wall Mounting Panel</h3>
-                    <p style="color: var(--text-dim); font-size: 0.95rem;">Desain kokoh untuk instalasi dinding. Presisi tinggi dengan standar proteksi maksimal.</p>
+                    <p style="color: #94a3b8; font-size: 0.95rem;">Desain kokoh untuk instalasi dinding. Presisi tinggi dengan standar proteksi maksimal.</p>
                     <ul class="size-list">
                         <li>Wall Mounting 40 x 30 x 20</li>
                         <li>Wall Mounting 50 x 40 x 20</li>
@@ -262,15 +194,12 @@
                     </ul>
                 </div>
 
-                <!-- Free Standing -->
                 <div class="card">
-                    <!-- PLACEHOLDER FOTO FREE STANDING -->
                     <div class="img-placeholder" style="height: 250px; margin-bottom: 20px; border-radius: 8px;">
-                        [ SPACE FOTO : PANEL FREE STANDING ]
-                        <a href="https://ibb.co/VcxzCNJV"><img src="https://i.ibb.co/v6hTdBV1/box-panel-listrik-free-standing-custom-semarang.png" alt="box-panel-listrik-free-standing-custom-semarang" border="0"></a>
+                        <img src="https://i.ibb.co/v6hTdBV1/box-panel-listrik-free-standing-custom-semarang.png" alt="Box Panel Listrik Free Standing">
                     </div>
                     <h3>Free Standing Panel</h3>
-                    <p style="color: var(--text-dim); font-size: 0.95rem;">Konstruksi lantai skala besar untuk distribusi daya utama dan kontrol industri.</p>
+                    <p style="color: #94a3b8; font-size: 0.95rem;">Konstruksi lantai skala besar untuk distribusi daya utama dan kontrol industri.</p>
                     <ul class="size-list">
                         <li>Free Standing 1 Pintu - Depth 60</li>
                         <li>Free Standing 1 Pintu - Depth 70</li>
@@ -288,55 +217,55 @@
         </div>
     </section>
 
-    <!-- LAYANAN EKSPANSI: METALWORKS & ROBOTICS -->
     <section id="metalworks" style="background-color: #02050a;">
         <div class="container">
             <h2>Lebih Dari Sekadar Panel.<br><span class="gradient-text">Engineered for Industry.</span></h2>
-            <p class="text-center" style="max-width: 800px; margin: 0 auto 50px; color: var(--text-dim);">
+            <p class="text-center" style="max-width: 800px; margin: 0 auto 50px; color: #94a3b8;">
                 Mengakomodir rekayasa struktural dan pekerjaan fabrikasi *Metalworks* komprehensif. Didukung kapasitas produksi tinggi untuk merealisasikan infrastruktur pabrik, storage, hingga otomasi robotik tingkat lanjut.
             </p>
 
             <div class="grid-4">
                 <div class="feature-card">
-                    <!-- PLACEHOLDER FOTO -->
-                    <div class="img-placeholder icon-img"> [ FOTO STORAGE TANK ]
-                        <a href="https://ibb.co/svBn8b9D"><img src="https://i.ibb.co/C5rgRmKX/storage-tank-tanki-liquid-custom-jawa-tengah.png" alt="storage-tank-tanki-liquid-custom-jawa-tengah" border="0"></a>
+                    <div class="img-placeholder icon-img">
+                        <img src="https://i.ibb.co/C5rgRmKX/storage-tank-tanki-liquid-custom-jawa-tengah.png" alt="Storage Tank">
+                    </div>
                     <h3>Storage Tank</h3>
-                    <p style="color: var(--text-dim); font-size: 0.9rem;">Fabrikasi tangki penyimpanan material cair/solid skala industri.</p>
+                    <p style="color: #94a3b8; font-size: 0.9rem;">Fabrikasi tangki penyimpanan material cair/solid skala industri.</p>
                 </div>
+                
                 <div class="feature-card">
-                    <!-- PLACEHOLDER FOTO -->
-                    <div class="img-placeholder icon-img"> [ FOTO MESIN INDUSTRI ]
-                        <a href="https://ibb.co/dw1f0Lq4"><img src="https://i.ibb.co/fzBXYn5d/Mesin-Industri-pabrik-custom-jawa-tengah.png" alt="Mesin Industri-pabrik-custom-jawa-tengah" border="0"></a>
+                    <div class="img-placeholder icon-img">
+                        <img src="https://i.ibb.co/fzBXYn5d/Mesin-Industri-pabrik-custom-jawa-tengah.png" alt="Mesin Industri Custom">
+                    </div>
                     <h3>Mesin Industri Custom</h3>
-                    <p style="color: var(--text-dim); font-size: 0.9rem;">Perakitan mesin Labelling, Conveyor, Liquid Filling, dan Carton Sealer/Erector.</p>
+                    <p style="color: #94a3b8; font-size: 0.9rem;">Perakitan mesin Labelling, Conveyor, Liquid Filling, dan Carton Sealer.</p>
                 </div>
+                
                 <div class="feature-card">
-                    <!-- PLACEHOLDER FOTO -->
-                    <div class="img-placeholder icon-img"> [ FOTO PRECISION PART ]
-                        <a href="https://ibb.co/DP7LYbZR"><img src="https://i.ibb.co/WNCs03L2/Precision-Part-fabrikasi-Plat-Presisi-Custom-jawa-tengah.png" alt="Precision-Part-fabrikasi-Plat-Presisi-Custom-jawa-tengah" border="0"></a>
+                    <div class="img-placeholder icon-img">
+                        <img src="https://i.ibb.co/WNcs03L2/Precision-Part-fabrikasi-Plat-Presisi-Custom-jawa-tengah.png" alt="Precision Part">
+                    </div>
                     <h3>Precision Part</h3>
-                    <p style="color: var(--text-dim); font-size: 0.9rem;">Manufaktur komponen metal spesifik dengan akurasi dan toleransi ketat.</p>
+                    <p style="color: #94a3b8; font-size: 0.9rem;">Manufaktur komponen metal spesifik dengan akurasi dan toleransi ketat.</p>
                 </div>
+                
                 <div class="feature-card">
-                    <!-- PLACEHOLDER FOTO -->
-                    <div class="img-placeholder icon-img"> [ FOTO ROBOTIC ]
-                        <a href="https://ibb.co/NnLXWg0H"><img src="https://i.ibb.co/Kz9YVct3/Robotic-Industri-conveyor-custom-jawa-tengah.png" alt="Robotic Industri-conveyor-custom-jawa-tengah" border="0"></a>
+                    <div class="img-placeholder icon-img">
+                        <img src="https://i.ibb.co/Kz9YVct3/Robotic-Industri-conveyor-custom-jawa-tengah.png" alt="Industrial Robotic">
+                    </div>
                     <h3>Industrial Robotic</h3>
-                    <p style="color: var(--text-dim); font-size: 0.9rem;">Integrasi sistem otomasi dan robotika untuk efisiensi rantai produksi.</p>
+                    <p style="color: #94a3b8; font-size: 0.9rem;">Integrasi sistem otomasi dan robotika untuk efisiensi rantai produksi.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer>
         <div class="container">
             <p>&copy; 2024 Pusat Fabrikasi Metal & Box Panel. Berbasis di Semarang, melayani pengiriman nasional.</p>
         </div>
     </footer>
 
-    <!-- TOMBOL WHATSAPP MENGAMBANG (Terhubung ke 081931362319) -->
     <a href="https://wa.me/6281931362319?text=Halo,%20saya%20mendapat%20informasi%20dari%20Website.%20Saya%20ingin%20berkonsultasi%20mengenai%20kebutuhan%20Box%20Panel/Fabrikasi%20saya." class="wa-float" target="_blank">
         Konsultasi via WhatsApp
     </a>
